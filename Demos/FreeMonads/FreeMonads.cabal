@@ -1,0 +1,40 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           FreeMonads
+version:        0.1.0.0
+description:    Workshop - Freie Monaden
+author:         Carsten König
+maintainer:     Carsten.Koenig@hotmail.de
+copyright:      2021 Carsten König
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+
+library
+  exposed-modules:
+      Teletyper
+  other-modules:
+      Paths_FreeMonads
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , fused-effects
+  default-language: Haskell2010
+
+executable FreeMonads-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_FreeMonads
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      FreeMonads
+    , base >=4.7 && <5
+    , fused-effects
+  default-language: Haskell2010

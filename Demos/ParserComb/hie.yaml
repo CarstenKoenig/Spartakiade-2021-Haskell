@@ -1,0 +1,7 @@
+cradle:
+  stack:
+    - path: "./src"
+      component: "ParserComb:lib"
+
+    - path: "./test"
+      component: "ParserComb:test:ParserComb-test"

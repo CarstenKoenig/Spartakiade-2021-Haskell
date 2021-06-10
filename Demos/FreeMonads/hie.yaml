@@ -1,0 +1,10 @@
+cradle:
+  stack:
+    - path: "./src"
+      component: "FreeMonads:lib"
+
+    - path: "./app/Main.hs"
+      component: "FreeMonads:exe:FreeMonads-exe"
+
+    - path: "./app/Paths_FreeMonads.hs"
+      component: "FreeMonads:exe:FreeMonads-exe"

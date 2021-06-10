@@ -1,0 +1,27 @@
+name:                ParserComb
+version:             0.1.0.0
+license:             BSD3
+author:              "Casten König"
+maintainer:          "Carsten.Koenig@hotmail.de"
+copyright:           "2021 Carsten König"
+
+description:         Workshop Parser-Combinator
+
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+
+tests:
+  ParserComb-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - ParserComb
+    - hspec
+    - QuickCheck

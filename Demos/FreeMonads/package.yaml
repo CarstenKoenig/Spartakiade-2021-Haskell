@@ -1,0 +1,26 @@
+name: FreeMonads
+version: 0.1.0.0
+license: BSD3
+author: 'Carsten König'
+maintainer: 'Carsten.Koenig@hotmail.de'
+copyright: '2021 Carsten König'
+
+description: Workshop - Freie Monaden
+
+dependencies:
+  - base >= 4.7 && < 5
+  - fused-effects
+
+library:
+  source-dirs: src
+
+executables:
+  FreeMonads-exe:
+    main: Main.hs
+    source-dirs: app
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    dependencies:
+      - FreeMonads
