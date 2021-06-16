@@ -17,7 +17,6 @@ main = hspec spec
 spec :: Spec
 spec = do
 
-  {- STEP 1
    describe "Parser Tests" $ do
      it "runParser (succeed True) \"333\" liefert True und konsumiert nichts von der Eingabe" $
        runParser (succeed True) "333" `shouldBe` Just (True, "333")
@@ -33,9 +32,7 @@ spec = do
 
      it "runParser digit \"xy\" liefert Nothing" $
        runParser digit "xy" `shouldBe` Nothing
-  -}
 
-  {- STEP 2
      describe "Parser sind Funktoren" $ do
        it "runParser (fmap (read . \\c -> [c]) digit) \"234\" liefert Int 2 und \"34\" als Rest" $
          runParser (fmap (read . \c -> [c]) digit) "234" `shouldBe` Just (2, "34")
@@ -44,8 +41,7 @@ spec = do
        prop "fmap bildet Kompositionen auf Kompositionen ab" $ \s ->
          runParser (fmap ((read :: String -> Int) . \c -> [c]) digit) s
          `shouldBe` runParser (fmap read . fmap (\c -> [c]) $ digit) s
-  -}
-  {- STEP 3
+
      describe "der try - Kombinator" $ do
        it "liefert ein zustätzliches Just, falls der getestete Parser erfolgreich ist" $
          runParser (try digit) "123" `shouldBe` Just (Just '1', "23")
@@ -65,9 +61,7 @@ spec = do
        prop "erfüllt das Composition Gesetz" $ \s ->
          runParser (fmap (\a cont -> cont a) digit <*> (fmap (\b c a -> [a,b,c]) digit <*> digit)) s
          `shouldBe` runParser (pure (.) <*> fmap (\a cont -> cont a) digit <*> fmap (\b c a -> [a,b,c]) digit <*> digit) s
-  -}
 
-  {- STEP 4
      describe "many Parser" $ do
        it "many digit erkennt alle Ziffern in String" $
          runParser (many digit) "1234xy" `shouldBe` Just ("1234", "xy")
@@ -83,9 +77,8 @@ spec = do
          runParser (oneOf [digit, char (== 'x')]) "x" `shouldBe` Just ('x', "")
        it "oneOf [digit, char (== 'x')] erkennt 'y' nicht" $
          runParser (oneOf [digit, char (== 'x')]) "y" `shouldBe` Nothing
-  -}
 
-  {- STEP 5
+
      describe "Parsers Monoid-Instanz" $ do
        it "many digit <> many (char (== 'x')) erkennt \"123xx\"" $
          runParser (many digit <> many (char (== 'x'))) "123xxuuu" `shouldBe` Just ("123xx", "uuu")
@@ -102,9 +95,7 @@ spec = do
          runParser decide "2y" `shouldBe` Just ("ok-y", "")
          runParser decide "1y" `shouldBe` Nothing
          runParser decide "3z" `shouldBe` Nothing
-    -}
 
-    {- REST
      describe "whitespace erkennung" $ do
        it "erkennt Leerzeichen" $
          runParser whitespace "   xyz" `shouldBe` Just ((), "xyz")
@@ -125,6 +116,3 @@ spec = do
      describe "chainl1 Kombinator" $
        it "erkennt digits getrennt von ':'" $
          runParser (chainl1 (fmap pure digit) (char (== ':') *> pure (++))) "1:2:3:4xyz" `shouldBe` Just ("1234", "xyz")
-  -}
-
-     describe "Dummy" $ it "just succeeds" $ 1+1 `shouldBe` 2

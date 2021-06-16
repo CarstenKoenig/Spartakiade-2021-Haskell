@@ -93,6 +93,3 @@ instance Functor (Const b) where
 
 
 -- Recursion Schemes (Rekursive Datentypen - generisch behandeln) (Scrap your Boilerplate ..)
-
-
--- Mittagspause bis 13:30 - bin ab 13:15 zurück falls Fagen sind

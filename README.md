@@ -18,3 +18,8 @@ auf der [Spartakiade 2021](https://spartakiade.org/)
 - Beispiele Monaden / Transformer / MTL
 - (optional) Freie Monaden
 - (optional) Einführung Lenses
+
+## Links
+
+- Teilnehmerhinweis: [Statebox](https://statebox.org/)
+- [Typeclassopedia](https://wiki.haskell.org/Typeclassopedia) (Überblick über gängige Typ-Klassen in Haskell und ihre Beziehungen)

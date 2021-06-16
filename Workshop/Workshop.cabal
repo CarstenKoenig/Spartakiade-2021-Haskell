@@ -24,6 +24,7 @@ library
   exposed-modules:
       Data.Util
       Intro
+      Lenses
       Lib
       TypKlassen
   other-modules:

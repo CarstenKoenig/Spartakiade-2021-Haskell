@@ -6,17 +6,25 @@ cabal-version: 1.12
 
 name:           ParserComb
 version:        0.1.0.0
-description:    Workshop Parser-Combinator
+description:    Please see the README on GitHub at <https://github.com/githubuser/ParserComb#readme>
+homepage:       https://github.com/githubuser/ParserComb#readme
+bug-reports:    https://github.com/githubuser/ParserComb/issues
 author:         Casten König
 maintainer:     Carsten.Koenig@hotmail.de
 copyright:      2021 Carsten König
 license:        BSD3
 license-file:   LICENSE
 build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/ParserComb
 
 library
   exposed-modules:
-      Formel
       Parser
   other-modules:
       Paths_ParserComb

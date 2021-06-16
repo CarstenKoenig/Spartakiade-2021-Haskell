@@ -6,17 +6,31 @@ cabal-version: 1.12
 
 name:           FreeMonads
 version:        0.1.0.0
-description:    Workshop - Freie Monaden
+description:    Please see the README on GitHub at <https://github.com/githubuser/FreeMonads#readme>
+homepage:       https://github.com/githubuser/FreeMonads#readme
+bug-reports:    https://github.com/githubuser/FreeMonads/issues
 author:         Carsten König
 maintainer:     Carsten.Koenig@hotmail.de
 copyright:      2021 Carsten König
 license:        BSD3
 license-file:   LICENSE
 build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/FreeMonads
 
 library
   exposed-modules:
-      Teletyper
+      Teletyper.Version1
+      Teletyper.Version2
+      Teletyper.Version3
+      Teletyper.Version4
+      Teletyper.Version5
+      Teletyper.VersionFused
   other-modules:
       Paths_FreeMonads
   hs-source-dirs:

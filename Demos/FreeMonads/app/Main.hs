@@ -1,6 +1,6 @@
 module Main where
 
-import Teletyper
+import Teletyper.VersionFused
 
 main :: IO ()
 main = run sayHello
